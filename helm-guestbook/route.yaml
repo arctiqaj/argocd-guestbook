@@ -4,7 +4,6 @@ metadata:
   name: gbookroute
   namespace: gbook
 spec:
-  host: gbookroute-gbook.apps.cluster-cebe.cebe.sandbox265.opentlc.com
   to:
     kind: Service
     name: ajsgbook-helm-guestbook
