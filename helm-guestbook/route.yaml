@@ -1,0 +1,68 @@
+kind: Route
+apiVersion: route.openshift.io/v1
+metadata:
+  annotations:
+    openshift.io/host.generated: 'true'
+  selfLink: /apis/route.openshift.io/v1/namespaces/gbook/routes/gbookroute
+  resourceVersion: '185961'
+  name: gbookroute
+  uid: 3d7c9a2a-ec5a-49c1-ba0e-7decf9d59200
+  creationTimestamp: '2021-07-14T18:44:11Z'
+  managedFields:
+    - manager: Mozilla
+      operation: Update
+      apiVersion: route.openshift.io/v1
+      time: '2021-07-14T18:44:11Z'
+      fieldsType: FieldsV1
+      fieldsV1:
+        'f:metadata':
+          'f:labels':
+            .: {}
+            'f:app': {}
+            'f:app.kubernetes.io/instance': {}
+            'f:chart': {}
+            'f:heritage': {}
+            'f:release': {}
+        'f:spec':
+          'f:port':
+            .: {}
+            'f:targetPort': {}
+          'f:to':
+            'f:kind': {}
+            'f:name': {}
+            'f:weight': {}
+          'f:wildcardPolicy': {}
+    - manager: openshift-router
+      operation: Update
+      apiVersion: route.openshift.io/v1
+      time: '2021-07-14T18:44:11Z'
+      fieldsType: FieldsV1
+      fieldsV1:
+        'f:status':
+          'f:ingress': {}
+  namespace: gbook
+  labels:
+    app: helm-guestbook
+    app.kubernetes.io/instance: ajsgbook
+    chart: helm-guestbook-0.1.0
+    heritage: Helm
+    release: ajsgbook
+spec:
+  host: gbookroute-gbook.apps.cluster-cebe.cebe.sandbox265.opentlc.com
+  to:
+    kind: Service
+    name: ajsgbook-helm-guestbook
+    weight: 100
+  port:
+    targetPort: http
+  wildcardPolicy: None
+status:
+  ingress:
+    - host: gbookroute-gbook.apps.cluster-cebe.cebe.sandbox265.opentlc.com
+      routerName: default
+      conditions:
+        - type: Admitted
+          status: 'True'
+          lastTransitionTime: '2021-07-14T18:44:11Z'
+      wildcardPolicy: None
+      routerCanonicalHostname: apps.cluster-cebe.cebe.sandbox265.opentlc.com
