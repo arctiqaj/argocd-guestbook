@@ -10,11 +10,11 @@ image:
   pullPolicy: IfNotPresent
 
 service:
-  type: ClusterIP
+  type: Loadbalencer
   port: 80
 
 ingress:
-  enabled: true
+  enabled: false
   annotations: {}
   #   kubernetes.io/ingress.class: nginx
   #   kubernetes.io/tls-acme: "true"
