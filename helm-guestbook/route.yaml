@@ -2,11 +2,11 @@ kind: Route
 apiVersion: route.openshift.io/v1
 metadata:
   name: gbookroute
-  namespace: gbook
+  namespace: default
 spec:
   to:
     kind: Service
-    name: ajsgbook-helm-guestbook
+    name: finalargo-helm-guestbook
     weight: 100
   port:
     targetPort: http
